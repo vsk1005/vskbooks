@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bukus</h1>
+
+<div id="bukus">
+  <% @bukus.each do |buku| %>
+    <%= render buku %>
+    <p>
+      <%= link_to "Show this buku", buku %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New buku", new_buku_path %>
+
+
+<h1>Listing Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bukus.each do |buku| %>
+      <tr>
+        <td><%= buku.title %></td>
+        <td><%= buku.author %></td>
+        <td><%= link_to "Show", buku %></td>
+        <td><%= link_to "Edit", edit_buku_path(buku) %></td>
+        <td><%= link_to "Destroy", buku, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary">Primary</button>
+<br>

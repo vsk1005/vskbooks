@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @buku %>
+
+<div>
+  <%= link_to "Edit this buku", edit_buku_path(@buku) %> |
+  <%= link_to "Back to bukus", bukus_path %>
+
+  <%= button_to "Destroy this buku", @buku, method: :delete %>
+</div>

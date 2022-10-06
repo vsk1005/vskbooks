@@ -1,0 +1,27 @@
+<%= form_with(model: buku) do |form| %>
+  <% if buku.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(buku.errors.count, "error") %> prohibited this buku from being saved:</h2>
+
+      <ul>
+        <% buku.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_area :title %>
+  </div>
+
+  <div>
+    <%= form.label :author, style: "display: block" %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
